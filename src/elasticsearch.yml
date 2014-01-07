@@ -1,0 +1,19 @@
+---
+cluster:
+    ## @todo make cluster.name configurable
+    name: logstash
+
+## don't set node.name; let it be dynamic so we can cluster
+#node:
+#    name: docker
+
+bootstrap:
+    mlockall: true
+
+## http://jablonskis.org/2013/elasticsearch-and-logstash-tuning/
+indices:
+    memory:
+        index_buffer_size: 50%
+
+index:
+    number_of_shards: 3
