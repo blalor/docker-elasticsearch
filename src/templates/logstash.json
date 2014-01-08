@@ -28,10 +28,7 @@
                                     "{name}": {
                                         "type": "string",
                                         "index": "analyzed",
-                                        "omit_norms": true,
-                                        "fielddata": {
-                                            "format": "disabled"
-                                        }
+                                        "omit_norms": true
                                     },
                                     "raw": {
                                         "type": "string",
