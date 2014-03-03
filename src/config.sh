@@ -5,7 +5,6 @@ set -x
 
 cd /tmp/src
 
-mv templates                 /etc/elasticsearch/templates
 mv elasticsearch-logging.yml /etc/elasticsearch/logging.yml
 mv elasticsearch.yml         /etc/elasticsearch/elasticsearch.yml
 
