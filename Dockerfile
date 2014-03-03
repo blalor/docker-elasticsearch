@@ -1,5 +1,5 @@
-FROM localhost:5000/core/java
-MAINTAINER Brian Lalor <brian@autosportlabs.com>
+FROM blalor/java
+MAINTAINER Brian Lalor <blalor@bravo5.org>
 
 EXPOSE 9200 9300
 
