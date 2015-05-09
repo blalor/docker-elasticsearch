@@ -1,7 +1,15 @@
 ---
 cluster:
     ## @todo make cluster.name configurable
-    name: logstash
+    name: "${ES_CLUSTER_NAME}"
+    cluster:
+        routing:
+            allocation:
+                disk:
+                    ## http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/index-modules-allocation.html
+                    ## suppress low disk watermark messages
+                    ## low disk watermark [15%] exceeded on […] free: 118.7gb[14.3%], replicas will not be assigned to this node
+                    threshold_enabled: ${ES_DISK_THRESHOLD_ENABLED}
 
 ## don't set node.name; let it be dynamic so we can cluster
 #node:
@@ -16,4 +24,9 @@ indices:
         index_buffer_size: 50%
 
 index:
-    number_of_shards: 3
+    number_of_shards: ${ES_INDEX_NUMBER_OF_SHARDS}
+    number_of_replicas: ${ES_INDEX_NUMBER_OF_REPLICAS}
+
+http:
+    cors:
+        enabled: true

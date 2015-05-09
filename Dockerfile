@@ -13,3 +13,8 @@ RUN /tmp/src/config.sh
 ## user/group which appears to have ids 498/499. Ownership set on launch by
 ## launch.sh
 VOLUME [ "/var/lib/elasticsearch" ]
+
+ENV ES_CLUSTER_NAME logstash
+ENV ES_INDEX_NUMBER_OF_SHARDS 1
+ENV ES_INDEX_NUMBER_OF_REPLICAS 0
+ENV ES_DISK_THRESHOLD_ENABLED false
