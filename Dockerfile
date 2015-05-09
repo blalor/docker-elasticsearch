@@ -3,9 +3,6 @@ MAINTAINER Brian Lalor <blalor@bravo5.org>
 
 EXPOSE 9200 9300
 
-RUN yum -y localinstall --nogpgcheck \
-    https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.4.5.noarch.rpm
-
 ADD src/ /tmp/src/
 RUN /tmp/src/config.sh
 
